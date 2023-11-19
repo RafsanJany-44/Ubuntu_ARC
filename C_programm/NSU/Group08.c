@@ -19,6 +19,9 @@ void createFile(char *filename) {
 
     close(fd); //Using close() command to close the file
 }
+
+
+
 //Function for reading a file
 void readFile(char *filename) {
     int fd = open(filename, O_RDONLY);
@@ -40,6 +43,10 @@ void readFile(char *filename) {
 
     close(fd);
 }
+
+
+
+
 //Function to write to a file
 void writeFile(char *filename, char *content){
     int fd = open(filename, O_WRONLY | O_TRUNC);
@@ -71,8 +78,12 @@ void deleteFile(char *filename){
     if(unlink(filename)==-1){ //Using unlink() command to delete the file
         handleError("Could not delete file");
     }
-    printf("File \"%s\" deleted successfully. \n",filename);
+    printf("\n\nFile \"%s\" deleted successfully. \n",filename);
 }
+
+
+
+
 int main() {
     char filename[256];
     char content[1024];
